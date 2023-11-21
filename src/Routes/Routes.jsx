@@ -14,6 +14,8 @@ import AllUsers from "../Pages/DashBoard/AllUsers/AllUsers";
 import DashBoard from "../Pages/DashBoard/DashBoard";
 import AddItems from "../Pages/DashBoard/AddItems";
 import AdminRoute from "./AdminRoute";
+import ManageItems from "../Pages/ManageItems";
+import Update from "../Pages/DashBoard/Update/Update";
 
 
 
@@ -58,6 +60,15 @@ import AdminRoute from "./AdminRoute";
       {
         path:'addItems',
         element:<AdminRoute><AddItems></AddItems></AdminRoute>
+      },
+      {
+        path:'manageItems',
+        element:<AdminRoute><ManageItems></ManageItems></AdminRoute>
+      },
+      {
+        path:'updateItem/:id',
+        element:<AdminRoute><Update></Update></AdminRoute>,
+        loader:({params})=>fetch(`http://localhost:5000/menu/${params.id}`)
       },
       {
         path:'allUser',

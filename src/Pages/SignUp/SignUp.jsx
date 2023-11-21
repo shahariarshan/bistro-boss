@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
-
 import GoogleSignIn from "../../hooks/GoogleSignIn";
 import Swal from "sweetalert2";
 
@@ -33,7 +32,7 @@ const SignUp = () => {
                         const userInfo = {
                             name: data.name,
                             email: data.email,
-                            photoURL:data.photoURL
+                            photoURL: data.photoURL
                         }
                         usePublic.post('/users', userInfo)
                             .then(result => {
@@ -131,7 +130,7 @@ const SignUp = () => {
                         </div>
                         <input type="Submit" value="Sign Up" className="btn  text-[#BB8506] border-0 border-b-4 btn-outline" />
                     </form>
-                    
+
                     <GoogleSignIn></GoogleSignIn>
                     <p className='text-center  mb-4'>Already have an account? <Link to='/login' className='text-[#BB8506]'>Please Log In</Link></p>
                 </div>
