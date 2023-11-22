@@ -16,6 +16,8 @@ import AddItems from "../Pages/DashBoard/AddItems";
 import AdminRoute from "./AdminRoute";
 import ManageItems from "../Pages/ManageItems";
 import Update from "../Pages/DashBoard/Update/Update";
+import Payment from "../Pages/DashBoard/Payment/Payment";
+import PaymentHistory from "../Pages/DashBoard/PaymentHistory/PaymentHistory";
 
 
 
@@ -55,6 +57,14 @@ import Update from "../Pages/DashBoard/Update/Update";
       {
         path:'cart',
         element:<Cart></Cart>
+      },
+      {
+        path:'payment',
+        element:<Payment></Payment>
+      },
+      {
+        path:'paymentHistory',
+        element:<PaymentHistory></PaymentHistory>
       },
       // admin only routes 
       {

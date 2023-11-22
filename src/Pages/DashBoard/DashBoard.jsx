@@ -11,7 +11,7 @@ import { IoMdContacts } from "react-icons/io";
 import useCarts from "../../hooks/useCarts";
 import useAdmin from "../../hooks/useAdmin";
 const DashBoard = () => {
-    const [c] = useCarts()
+    const [cart] = useCarts()
     const [isAdmin] =useAdmin()
     return (
 
@@ -42,11 +42,11 @@ const DashBoard = () => {
                         :
                         <>
                         <li className="text-2xl   "><NavLink to='/dashboard/userHome'><FaHome></FaHome>User Home</NavLink></li>
-                    <li className="text-2xl  "><NavLink to='/dashboard/reservation'><SlCalender></SlCalender>Reservation</NavLink></li>
-                    <li className="text-2xl  "><NavLink to='/dashboard/payment'><RiSecurePaymentLine></RiSecurePaymentLine>Payment History</NavLink></li>
-                    <li className="text-2xl  "><NavLink to='/dashboard/cart'><BsFillCartCheckFill>({c.length})</BsFillCartCheckFill>My Cart</NavLink></li>
+                    <li className="text-2xl  "><NavLink to='/dashboard/payment'><SlCalender></SlCalender>Reservation</NavLink></li>
+                    <li className="text-2xl  "><NavLink to='/dashboard/history'><RiSecurePaymentLine></RiSecurePaymentLine>Payment History</NavLink></li>
+                    <li className="text-2xl  "><NavLink to='/dashboard/cart'><BsFillCartCheckFill></BsFillCartCheckFill>My Cart ({cart.length})</NavLink></li>
                     <li className="text-2xl  "><NavLink to='/dashboard/addReview'><VscPreview></VscPreview>Add Review</NavLink></li>
-                    <li className="text-2xl  "><NavLink to='/dashboard/myBooking'><TbBrandBooking></TbBrandBooking>My Booking</NavLink></li>
+                    <li className="text-2xl  "><NavLink to='/dashboard/paymentHistory'><TbBrandBooking></TbBrandBooking>Payment real History</NavLink></li>
                         </>
                     }
 

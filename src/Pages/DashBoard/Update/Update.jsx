@@ -81,7 +81,8 @@ const Update = () => {
                             <label className="label">
                                 <span className="label-text">Category*:</span>
                             </label>
-                            <select defaultValue={category} {...register("category",{required:true})} className="select select-primary w-full ">
+                            <select defaultValue={category} 
+                            {...register("category",{required:true})} className="select select-primary w-full ">
                                 <option disabled selected>Select Items</option>
                                 <option value="salad">Salad</option>
                                 <option value="pizza">Pizza</option>
