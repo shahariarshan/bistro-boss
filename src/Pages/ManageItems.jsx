@@ -7,13 +7,13 @@ import useAxios from "../hooks/useAxios";
 import { Link } from "react-router-dom";
 
 const ManageItems = () => {
-    const [menu, ,refetch] = useMenu()
-    const axiosSecure =useAxios()
+    const [menu, , refetch] = useMenu()
+    const axiosSecure = useAxios()
     // manage items 
     const handelUpdateItem = (item) => {
 
     }
-    const handelDeleteItem =(item) => {
+    const handelDeleteItem = (item) => {
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -22,21 +22,21 @@ const ManageItems = () => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
-        }).then(async(result) => {
+        }).then(async (result) => {
             if (result.isConfirmed) {
-                const res =await axiosSecure.delete(`/menu/${item._id}`)
+                const res = await axiosSecure.delete(`/menu/${item._id}`)
                 console.log(res.data);
-if(res.data.deletedCount > 0){
-    // refetch 
-    refetch()
-    Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: `${item.name} is deleted`,
-        showConfirmButton: false,
-        timer: 1500
-      });
-}
+                if (res.data.deletedCount > 0) {
+                    // refetch 
+                    refetch()
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `${item.name} is deleted`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
             }
         });
 
@@ -49,14 +49,11 @@ if(res.data.deletedCount > 0){
                 subHeading='Hurry Up'
             ></SectionTitle>
             <div>
-            <table className="table table-zebra ">
+                <table className="table table-zebra ">
                     <thead>
                         <tr className="text-3xl text-black">
                             <th></th>
                             <th className="text-center">Total items:{menu.length}</th>
-                            
-
-
 
                         </tr>
                     </thead>
@@ -96,9 +93,9 @@ if(res.data.deletedCount > 0){
                                     </td>
                                     <td>{item.price}$</td>
                                     <td>
-                                    <Link to={`/dashboard/updateItem/${item._id}`}>
-                                        <button onClick={() => handelUpdateItem(item)} className="btn btn-warning btn-md"><FaEdit className=" text-red-700 text-xl"></FaEdit></button>
-                                    </Link>
+                                        <Link to={`/dashboard/updateItem/${item._id}`}>
+                                            <button onClick={() => handelUpdateItem(item)} className="btn btn-warning btn-md"><FaEdit className=" text-red-700 text-xl"></FaEdit></button>
+                                        </Link>
                                     </td>
                                     <th>
                                         <button onClick={() => handelDeleteItem(item)} className="btn btn-warning btn-md"><MdOutlineDeleteSweep className="text-2xl"></MdOutlineDeleteSweep></button>

@@ -5,6 +5,7 @@ import useCarts from "../../hooks/useCarts";
 import { useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
 import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -15,6 +16,7 @@ const CheckOutForm = () => {
   const stripe = useStripe()
   const elements = useElements()
   const axiosSecure = useAxios()
+  const navigate =useNavigate()
   const [cart,refetch] = useCarts()
   const { user } = useAuth()
   const totalPrice = cart.reduce((total, item) => total + item.price, 0)
@@ -87,6 +89,7 @@ const CheckOutForm = () => {
         if(res.data?.paymentResult.insertedId){
           toast(`Hello  ${user?.displayName}   Sir! Your Payment is SuccessFul`)
         }
+        navigate('/dashboard/paymentHistory')
       }
     }
 
