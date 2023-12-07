@@ -58,7 +58,7 @@ const Login = () => {
         <div className="hero min-h-screen">
              <Helmet>
                 <title>
-                    Bistro Boss | Login
+                    Polling & Survey | Login
                 </title>
             </Helmet>
            

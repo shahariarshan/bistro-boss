@@ -69,7 +69,8 @@ const Update = () => {
                         </label>
                         <input type="text"
                         defaultValue={name}
-                            {...register("name",{required:true})}
+                            {...register("name",{required:true}) }
+                            required
                             placeholder="Type recipe name here"
                             className="input input-bordered w-full " />
 

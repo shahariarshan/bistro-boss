@@ -57,12 +57,14 @@ useEffect(()=>{
     .then(result =>{
         if(result.data.token){
             localStorage.setItem('access-token',result.data.token)
+            setLoading(false)
         }
         else{
             localStorage.removeItem('access-token')
+            setLoading(false)
         }
     })
-        setLoading(false)
+       
     })
     return ()=>{
         return unSubscribe()

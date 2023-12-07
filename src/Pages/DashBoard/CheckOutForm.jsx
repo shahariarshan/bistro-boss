@@ -19,7 +19,7 @@ const CheckOutForm = () => {
   const navigate =useNavigate()
   const [cart,refetch] = useCarts()
   const { user } = useAuth()
-  const totalPrice = cart.reduce((total, item) => total + item.price, 0)
+  const totalPrice = cart.reduce((total, item) => total + item.price, 0).toFixed(2)
 
   useEffect(() => {
     if(totalPrice > 0){

@@ -93,7 +93,7 @@ const ManageItems = () => {
                                     </td>
                                     <td>{item.price}$</td>
                                     <td>
-                                        <Link to={`/dashboard/updateItem/${item._id}`}>
+                                        <Link >
                                             <button onClick={() => handelUpdateItem(item)} className="btn btn-warning btn-md"><FaEdit className=" text-red-700 text-xl"></FaEdit></button>
                                         </Link>
                                     </td>

@@ -6,36 +6,6 @@ const axiosSecure = axios.create({
    baseURL: 'http://localhost:5000'
 })
 const useAxios = () => {
-   // const navigate = useNavigate()
-   // const { logOut } = useAuth()
-   // axiosSecure.interceptors.request.use(function (config) {
-   //    const token = localStorage.getItem('access-token')
-   //    // console.log('hiiiiiiiiiiii',token);
-   //    config.headers.authorization = `Bearer ${token}`
-   //    return config;
-   // }, function (error) {
-   //    return Promise.reject(error)
-   // });
-
-   // // interceptors 401 and 403 status 
-
-   // axiosSecure.interceptors.response.use(function (response) {
-   //    return response;
-   // },
-   //    async (error) => {
-   //       const status = error.response.status
-   //       // console.log('status error',status);
-
-   //       // for error status 401 and 403 log out the user and navigate the user in login page 
-
-   //       if (status === 401 || status === 403) {
-   //          navigate('/login')
-   //       }
-   //       await logOut
-   //       return Promise.reject(error)
-   //    }
-   // )
-
    const navigate = useNavigate();
    const { logOut } = useAuth();
 

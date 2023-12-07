@@ -12,13 +12,11 @@ import useCarts from "../../hooks/useCarts";
 import useAdmin from "../../hooks/useAdmin";
 const DashBoard = () => {
     const [cart] = useCarts()
-    const [isAdmin] =useAdmin()
+    const [isAdmin] = useAdmin()
     return (
 
         <div className="drawer lg:drawer-open flex">
-            {/* <div className="menu w-2/6 lg:w-3/12  bg-gray-400 h-screen">
-
-                </div> */}
+            
 
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col items-center justify-center">
@@ -32,27 +30,27 @@ const DashBoard = () => {
                 <ul className="menu p-4 w-80 min-h-full font-serif space-y-3 z-50 bg-gray-100  text-base-content">
                     {/* Sidebar content here */}
                     {
-                        isAdmin? <>
-                        <li className="text-2xl   "><NavLink to='/dashboard/adminHome'><FaHome></FaHome>Admin Home</NavLink></li>
-                    <li className="text-2xl  "><NavLink to='/dashboard/addItems'><FaUtensils></FaUtensils>Add Items</NavLink></li>
-                    <li className="text-2xl  "><NavLink to='/dashboard/manageItems'><FaList></FaList>Manage Items</NavLink></li>
-                    <li className="text-2xl  "><NavLink to='/dashboard/manageBooking'><FaBook></FaBook>Manage Booking</NavLink></li>
-                    <li className="text-2xl  "><NavLink to='/dashboard/allUser'><FaUsers></FaUsers>All User</NavLink></li>
+                        isAdmin ? <>
+                            <li className="text-2xl   "><NavLink to='/dashboard/adminHome'><FaHome></FaHome>Admin Home</NavLink></li>
+                            <li className="text-2xl  "><NavLink to='/dashboard/addItems'><FaUtensils></FaUtensils>Add Items</NavLink></li>
+                            <li className="text-2xl  "><NavLink to='/dashboard/manageItems'><FaList></FaList>Manage Items</NavLink></li>
+                            <li className="text-2xl  "><NavLink to='/dashboard/manageBooking'><FaBook></FaBook>Manage Booking</NavLink></li>
+                            <li className="text-2xl  "><NavLink to='/dashboard/allUser'><FaUsers></FaUsers>All User</NavLink></li>
                         </>
-                        :
-                        <>
-                        <li className="text-2xl   "><NavLink to='/dashboard/userHome'><FaHome></FaHome>User Home</NavLink></li>
-                    <li className="text-2xl  "><NavLink to='/dashboard/payment'><SlCalender></SlCalender>Reservation</NavLink></li>
-                    <li className="text-2xl  "><NavLink to='/dashboard/history'><RiSecurePaymentLine></RiSecurePaymentLine>Payment History</NavLink></li>
-                    <li className="text-2xl  "><NavLink to='/dashboard/cart'><BsFillCartCheckFill></BsFillCartCheckFill>My Cart ({cart.length})</NavLink></li>
-                    <li className="text-2xl  "><NavLink to='/dashboard/addReview'><VscPreview></VscPreview>Add Review</NavLink></li>
-                    <li className="text-2xl  "><NavLink to='/dashboard/paymentHistory'><TbBrandBooking></TbBrandBooking>Payment real History</NavLink></li>
-                        </>
+                            :
+                            <>
+                                <li className="text-2xl   "><NavLink to='/dashboard/userHome'><FaHome></FaHome>User Home</NavLink></li>
+                                <li className="text-2xl  "><NavLink to='/dashboard/payment'><SlCalender></SlCalender>Reservation</NavLink></li>
+                                <li className="text-2xl  "><NavLink to='/dashboard/history'><RiSecurePaymentLine></RiSecurePaymentLine>Payment History</NavLink></li>
+                                <li className="text-2xl  "><NavLink to='/dashboard/cart'><BsFillCartCheckFill></BsFillCartCheckFill>My Cart ({cart.length})</NavLink></li>
+                                <li className="text-2xl  "><NavLink to='/dashboard/addReview'><VscPreview></VscPreview>Add Review</NavLink></li>
+                                <li className="text-2xl  "><NavLink to='/dashboard/paymentHistory'><TbBrandBooking></TbBrandBooking>Payment real History</NavLink></li>
+                            </>
                     }
 
 
-                {/* common item for admin and users  */}
-                
+                    {/* common item for admin and users  */}
+
                     <div className="divider"></div>
                     <li className="text-2xl   "><NavLink to='/'><FaHome></FaHome> Home</NavLink></li>
                     <li className="text-2xl   "><NavLink to='/menu'><BiSolidFoodMenu></BiSolidFoodMenu> Menu</NavLink></li>
