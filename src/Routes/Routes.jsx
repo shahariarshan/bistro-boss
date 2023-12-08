@@ -90,7 +90,7 @@ import ErrorPage from "../Pages/error/ErrorPage";
       {
         path:'updateItem/:id',
         element:<AdminRoute><Update></Update></AdminRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/menu/${params.id}`)
+        loader:({params})=>fetch(`https://bistro-boss-server-mu-eosin.vercel.app/menu/${params.id}`)
       },
       {
         path:'allUser',
